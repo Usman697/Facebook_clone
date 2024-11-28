@@ -1,0 +1,47 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.post form textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin-top: 30px;
+    min-height: 100px;
+}
+.post form textarea:focus{
+    border: none;
+    outline: none;
+}
+.post form textarea::placeholder{
+    color: #858585;
+  }
+.post form textarea:focus::placeholder{
+    color: #b3b3b3;
+  }
+  .post form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 53px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #BCC0C4;
+    cursor: no-drop;
+    border-radius: 7px;
+    background: #e2e5e9;
+    transition: all 0.3s ease;
+    margin: 20px 0px;
+  }
+  .post form textarea:valid ~ button{
+    color: #fff;
+    cursor: pointer;
+    background: #4599FF;
+  }
+  .post form textarea:valid ~ button:hover{
+    background: #1a81ff;
+  }

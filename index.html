@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cfdb1b951f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="flex justify-center items-center">
+    <div id="signUpPage"
+        class="container border border-slate-200 lg:w-5/12 md:w-3/5 sm:w-full mx-auto drop-shadow-xl shadow-lg shadow-slate-300 rounded-e-4xl rounded-t-xl">
+        <h2 class="text-4xl text-blue-500 font-bold text-center mt-5">Facebook App</h2>
+        <form action="#">
+            <div class="w-9/12 mt-7 mb-5 mx-auto">
+                <label for="username"
+                    class="block mb-2 text-lg font-medium text-gray-900 dark:text-white w-9/12">Username</label>
+                <input type="text" id="username"
+                    class="pl-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm w-9/12 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="UserName" required />
+            </div>
+            <div class="w-9/12 mt-4 mb-5 mx-auto">
+                <label for="email" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white w-9/12">Email
+                    Address</label>
+                <input type="email" id="email"
+                    class="pl-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm w-9/12 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Email Address" required />
+            </div>
+            <div class="w-9/12 mt-4 mb-5 mx-auto">
+                <label for="password"
+                    class="block mb-2 text-lg font-medium text-gray-900 dark:text-white w-9/12">Password</label>
+                <input type="password" id="password"
+                    class="pl-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm w-9/12 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Password" required />
+            </div>
+        </form>
+        <div class="w-9/12 mt-7 mb-5 mx-auto">
+            <button type="submit" onclick="signUpForm()"
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 w-full hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Sign
+                Up
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="signInPage" class="container border w-5/12 mx-auto hidden">
+        <h2 class="text-4xl text-blue-500 font-bold text-center mt-5">Facebook App</h2>
+        <form action="#">
+            <div class="w-9/12 mt-4 mb-5 mx-auto">
+                <label for="loginUserName"
+                    class="block mb-2 text-lg font-medium text-gray-900 dark:text-white w-9/12">UserName
+                    </label>
+                <input type="text" id="loginUserName"
+                    class="pl-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm w-9/12 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="User Name" required />
+            </div>
+            <div class="w-9/12 mt-4 mb-5 mx-auto">
+                <label for="loginPassword"
+                    class="block mb-2 text-lg font-medium text-gray-900 dark:text-white w-9/12">Password</label>
+                <input type="password" id="loginPassword"
+                    class="pl-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm w-9/12 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Password" required />
+            </div>
+        </form>
+        <div class="w-9/12 mt-7 mb-5 mx-auto">
+            <button type="button" onclick="loginForm()"
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 w-full hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Sign
+                In
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="w-full text-center hidden" id="dashboard">
+        <div
+            class="rounded-xl border flex justify-between items-center bg-white-200 w-4/5 mt-6 m-auto shadow-2xl text-dark p-4">
+            <h1 class="text-xl font-bold">User Name : <span id="userName"></span></h1>
+            <h1 class="text-xl font-bold">Emali : <span id="userEmailProfile"></span></h1>
+        </div>
+
+        <div class="border container w-2/5 flex flex-col mx-auto mt-8">
+            <div class="container">
+                <section class="post">
+                    <header class="border-b-2 border-slate-900 py-2 text-center text-xl font-semibold tracking-wide">Create Post</header>
+                    <form class="my-5 mx-6" action="#">
+                      <div class="flex items-center">
+                        <img width="52px" src="./asset/Fb logo img.png" alt="logo">
+                        <div class="ml-4">
+                          <p id="postUserName" class="text-lg text-start font-medium"></p>
+                          <div class="privacy">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Friends</span>
+                            <i class="fas fa-caret-down"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <textarea id="postText" class="block" placeholder="What's on your mind?" required></textarea>
+                      <!-- <div class="theme-emoji">
+                        <img src="./images/theme.svg" alt="theme">
+                        <img src="./images/smile.svg" alt="smile">
+                      </div> -->
+                      <button onclick="postSubmitted()">Post</button>
+                    </form>
+                  </section>
+            </div>
+        </div>
+
+
+        <div id="postArea" class="hidden container mt-8 pb-2 border w-4/5 mx-auto mb-5 px-5 rounded rounded-xl shadow-xl">
+            
+        </div>
+
+
+
+        <!-- <div class="p-4 w-full m-auto">
+            <div class="bg-cyan-600 shadow-xl rounded-lg p-6 mb-6">
+                <h2 class="text-lg font-semibold">Profile</h2>
+                <div class="mb-4">
+                    <p>Name : <span id="usernameProfile"></span></p>
+                    <p>Emali : <span id="userEmailProfile"></span></p>
+                </div>
+            </div>
+        </div> -->
+        <div class="w-full m-auto px-6 mt-5">
+            <button class="bg-red-400 text-white p-3 rounded-lg shadow-lg shadow-gray-300"
+                onclick="logOut()">Logout</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
